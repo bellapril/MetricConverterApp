@@ -1,17 +1,81 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>METRIC CONVERTER</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h2 class="page-title">Convert Length & Temperature</h2>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Length Conversion Section -->
+  <ion-card>
+    <ion-card-header color="light">
+      <ion-card-title class="card-title">Length Conversion</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Enter Value</ion-label>
+        <ion-input [(ngModel)]="lengthInput" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>From</ion-label>
+        <ion-select [(ngModel)]="lengthFrom">
+          <ion-select-option value="km">Kilometer</ion-select-option>
+          <ion-select-option value="hm">Hektometer</ion-select-option>
+          <ion-select-option value="dam">Dekameter</ion-select-option>
+          <ion-select-option value="m">Meter</ion-select-option>
+          <ion-select-option value="dm">Desimeter</ion-select-option>
+          <ion-select-option value="cm">Centimeter</ion-select-option>
+          <ion-select-option value="mm">Milimeter</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To</ion-label>
+        <ion-select [(ngModel)]="lengthTo">
+          <ion-select-option value="km">Kilometer</ion-select-option>
+          <ion-select-option value="hm">Hektometer</ion-select-option>
+          <ion-select-option value="dam">Dekameter</ion-select-option>
+          <ion-select-option value="m">Meter</ion-select-option>
+          <ion-select-option value="dm">Desimeter</ion-select-option>
+          <ion-select-option value="cm">Centimeter</ion-select-option>
+          <ion-select-option value="mm">Milimeter</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block" (click)="convertLength()" color="danger">Convert</ion-button>
+      <p>Converted Value: {{ lengthOutput }} {{ lengthTo }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Temperature Conversion Section -->
+  <ion-card>
+    <ion-card-header color="light">
+      <ion-card-title class="card-title">Temperature Conversion</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Enter Value</ion-label>
+        <ion-input [(ngModel)]="tempInput" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>From</ion-label>
+        <ion-select [(ngModel)]="tempFrom">
+          <ion-select-option value="C">Celsius</ion-select-option>
+          <ion-select-option value="F">Fahrenheit</ion-select-option>
+          <ion-select-option value="K">Kelvin</ion-select-option>
+          <ion-select-option value="R">Reamur</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To</ion-label>
+        <ion-select [(ngModel)]="tempTo">
+          <ion-select-option value="C">Celsius</ion-select-option>
+          <ion-select-option value="F">Fahrenheit</ion-select-option>
+          <ion-select-option value="K">Kelvin</ion-select-option>
+          <ion-select-option value="R">Reamur</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block" (click)="convertTemperature()" color="danger">Convert</ion-button>
+      <p>Converted Value: {{ tempOutput }} {{ tempTo }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

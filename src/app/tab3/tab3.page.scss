@@ -1,0 +1,41 @@
+/* Style for the title of the page */
+.page-title {
+    text-align: center;
+    color: #ff3d00;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the card title */
+  .card-title {
+    color: #0039cb;
+  }
+  
+  /* Style for the buttons */
+  ion-button {
+    --background: #ff3d00;
+    --background-hover: #d32f2f;
+    margin-top: 10px;
+  }
+  
+  /* Styling for ion-header and toolbar */
+  ion-header {
+    ion-toolbar {
+      --background: #0039cb;
+    }
+  
+    ion-title {
+      color: white;
+    }
+  }
+  
+  /* Styling for cards */
+  ion-card {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for inputs and selects */
+  ion-input, ion-select {
+    --color: #000;
+    --background: #fff;
+  }
+  
